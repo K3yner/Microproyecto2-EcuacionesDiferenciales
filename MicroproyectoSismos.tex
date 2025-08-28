@@ -43,4 +43,55 @@
 \thispagestyle{fancy}
 \maketitle %comando para crear el título
 
+\section{Resolviendo la EDO}
+La respuesta dinámica de un edificio ante un sismo puede modelarse como un sistema con un solo grado de libertad SDOF, cuya
+ecuación diferencial está dada por:
+\begin{equation*}
+    m\ddot{x}(t) + b\dot{x}(t) + kx(t) = m\ddot{u_g}(t) 
+\end{equation*}
+donde m es la masa del edificio, b un coeficiente de amortiguamiento, k la constante de rigidez lateral, $x(t)$ el desplazamiento realtivo,
+y $\ddot{u_g}(t)$ la aceleración sísmica de entrada.
+
+La EDO homogénea asociada es:
+\begin{equation*}
+    m\ddot{x}(t) + b\dot{x}(t) + kx(t) = 0
+\end{equation*}
+y su ecuación característica es:
+\begin{gather*}
+    mr^2 + br + k = 0
+    \Rightarrow r = \frac{-b\pm \sqrt{b^2-4mk}}{2m}
+\end{gather*}
+Dadas las raíces $r_1 \neq r_2$ la solución característica será:
+\begin{equation*}
+    x(t) = c_1e^{r_1}+c_2e^{r_2}
+\end{equation*}
+mientras que para $r_1 = r_2$ la solución característica será:
+\begin{equation*}
+x(t) = c_1e^{r}+c_2xe^{r}
+\end{equation*}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\subsection{Ejercicio}
+Dados los valores: $m = 2,000 kg$,  $b = 500 N \cdot s/m$,  $k = 80,000 N/m$:
+\begin{gather*}
+    \Rightarrow r = \frac{-500\pm \sqrt{500^2-4(2,000)(80,000)}}{2(2,000)} =  -0.125 \pm 6.3233i \\
+    \Rightarrow x_c(t) = c_1e^{-0.125 + 6.3233i}+c_2xe^{-0.125 - 6.3233i} \\
+    \Rightarrow x_c(t) = e^{-0.125t}(c_1cos(6.3233t)+c_2sen(6.3233t))
+\end{gather*}
+
+\noindent\rule{\textwidth}{0.4pt}
+
+Para resolver la ecuación inhomogénea, se supone una entrada sísmica simplificada $\ddot{u_g}(t) = Asin(\omega t)$.\\
+Utilizando variación de parámetros se propone la solución particular: $x_p = \alpha sin(\omega t) + \beta cos(\omega t)$,
+\begin{gather*}
+    \dot{x_p} = \alpha \omega cos(\omega t) - \beta \omega sen(\omega t), \\
+    \ddot{x_p} = -\alpha \omega^2 sen(\omega t) + \beta \omega^2 cos(\omega t) \\
+    \rightarrow \ddot{x}(t) + \frac{b}{m}\dot{x}(t) + \frac{k}{m}x(t) = Asin(\omega t) \\
+    \Rightarrow -\alpha \omega^2 sen(\omega t) + \beta \omega^2 cos(\omega t) + 
+    \frac{b}{m}(\alpha \omega cos(\omega t) - \beta \omega sen(\omega t)) \\
+     + \frac{k}{m}(\alpha sin(\omega t) + \beta cos(\omega t)) = Asin(\omega t) \\
+    \Rightarrow (-\alpha \omega^2 - \frac{b \beta \omega}{m}+\frac{k \alpha}{m})sen(\omega t) + (\beta \omega^2+\frac{b \alpha \omega}{m})
+\end{gather*} 
+
 \end{document}
