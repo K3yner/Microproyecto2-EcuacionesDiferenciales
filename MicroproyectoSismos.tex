@@ -1,6 +1,7 @@
 \documentclass[12pt,letterpaper]{article}  
 
 \usepackage[spanish]{babel} %se usa para escribir en espaol
+\decimalpoint
 \usepackage[T1]{fontenc} %se usa para escribir en español también xd
 \usepackage[utf8]{inputenc} %se usa para escribir en español también xd
 \usepackage{graphicx} %se usa para incluir imágenes
@@ -103,10 +104,13 @@ Resolver este sistema de ecuaciones para $\alpha$ y $\beta$ da la solución part
 \subsection{Ejercicio}
 Dados los valores: $m = 2,000 kg$,  $b = 500 N \cdot s/m$,  $k = 80,000 N/m$, y la entrada sísmica $\ddot{u_g}(t)=0.3sin(3t)$:
 \begin{gather*}
-    \Rightarrow A = 0.3, \omega = 3
-    \Rightarrow (\omega^2-\frac{k}{m})\alpha + \frac{b \omega}{m}\beta  = A \\
-    \frac{b  \omega}{m}\alpha + (\omega^2+\frac{k}{m})\beta = 0
+    \Rightarrow A = 0.3, \omega = 3 \\
+    \rightarrow (3^2-\frac{80,000}{2,000})\alpha + \frac{500 \times 3}{2,000}\beta  = 0.3 \Rightarrow -31\alpha + 0.75\beta  = 0.3\\
+    \rightarrow \frac{500 \times 3}{2,000}\alpha + (3^2+\frac{80,000}{2,000})\beta = 0 \Rightarrow 0.75\alpha + 49\beta = 0
 \end{gather*}
+Resolviendo el sistema de ecuaciones se obtiene $\alpha = -9.67384 \times 10^{-3}$ y $\beta = 1.4807\times 10^{-4}$, y la solución general
+es:
+
 
 \noindent\rule{\textwidth}{0.4pt}
 
