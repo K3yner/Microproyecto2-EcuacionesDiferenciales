@@ -87,11 +87,27 @@ Utilizando variación de parámetros se propone la solución particular: $x_p = 
 \begin{gather*}
     \dot{x_p} = \alpha \omega cos(\omega t) - \beta \omega sen(\omega t), \\
     \ddot{x_p} = -\alpha \omega^2 sen(\omega t) + \beta \omega^2 cos(\omega t) \\
-    \rightarrow \ddot{x}(t) + \frac{b}{m}\dot{x}(t) + \frac{k}{m}x(t) = Asin(\omega t) \\
+    \rightarrow \ddot{x}(t) + \frac{b}{m}\dot{x}(t) + \frac{k}{m}x(t) = -Asin(\omega t) \\
     \Rightarrow -\alpha \omega^2 sen(\omega t) + \beta \omega^2 cos(\omega t) + 
-    \frac{b}{m}(\alpha \omega cos(\omega t) - \beta \omega sen(\omega t)) \\
+    \frac{b}{m}(\alpha \omega cos(\omega t) - \beta \omega sen(\omega t)) 
      + \frac{k}{m}(\alpha sin(\omega t) + \beta cos(\omega t)) = Asin(\omega t) \\
-    \Rightarrow (-\alpha \omega^2 - \frac{b \beta \omega}{m}+\frac{k \alpha}{m})sen(\omega t) + (\beta \omega^2+\frac{b \alpha \omega}{m})
+    \Rightarrow (-\alpha \omega^2 - \frac{b \beta \omega}{m}+\frac{k \alpha}{m})sen(\omega t) + 
+    (\beta \omega^2+\frac{b \alpha \omega}{m}+\frac{k\beta}{m})cos(\omega t) = Asin(\omega t) \\
+    \Rightarrow (\omega^2-\frac{k}{m})\alpha + \frac{b \omega}{m}\beta  = A \\
+    \frac{b  \omega}{m}\alpha + (\omega^2+\frac{k}{m})\beta = 0
 \end{gather*} 
+Resolver este sistema de ecuaciones para $\alpha$ y $\beta$ da la solución particular.
+
+\noindent\rule{\textwidth}{0.4pt}
+
+\subsection{Ejercicio}
+Dados los valores: $m = 2,000 kg$,  $b = 500 N \cdot s/m$,  $k = 80,000 N/m$, y la entrada sísmica $\ddot{u_g}(t)=0.3sin(3t)$:
+\begin{gather*}
+    \Rightarrow A = 0.3, \omega = 3
+    \Rightarrow (\omega^2-\frac{k}{m})\alpha + \frac{b \omega}{m}\beta  = A \\
+    \frac{b  \omega}{m}\alpha + (\omega^2+\frac{k}{m})\beta = 0
+\end{gather*}
+
+\noindent\rule{\textwidth}{0.4pt}
 
 \end{document}
