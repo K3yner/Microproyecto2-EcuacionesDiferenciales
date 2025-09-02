@@ -19,6 +19,18 @@
 \DefineBibliographyStrings{spanish}{and = {y}}
 \addbibresource{bibliografia.bib} % tu archivo .bib
 
+\newcommand{\ponerimagencent}[4][8cm]{% % comando para poner una imagen centrada
+  % #1: ancho de la imagen (default: 8cm)
+  % #2: ruta de la imagen
+  % #3: título de la imagen (opcional)
+  % #4: etiqueta de la imagen (opcional)
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#1]{#2}%
+    \ifstrempty{#3}{}{\caption{#3}}%
+    \ifstrempty{#4}{}{\label{fig:#4}}%
+  \end{figure}
+}
 
 \linespread{1.0}
 \usepackage{setspace} %se usa para controlar el interlineado
@@ -117,5 +129,16 @@ es:
 
 
 \noindent\rule{\textwidth}{0.4pt}
+
+\ponerimagencent[16cm]{Imágenes/EspectroRespuesta.png}{Espectro de Respuesta}{espectro-respuesta}
+
+En las gráficas presentadas se observa la variación de las demandas sísmicas en función del período de las estructuras, se identifica que en el espectro de desplazamiento el periodo aumenta de la misma manera que lo hacen los desplazamientos máximos relativos. Esto quiere decir que entre mayor sea tanto la flexibilidad como la altura, tiene una mayor susceptibilidad a presentar deformaciones durante un sismo, este es un dato crítico para poder determinar o garantizar la estabilidad y funcionalidad luego de este evento. \\
+
+En cuanto al espectro de la velocidad, se muestra que, en el rango intermedio entre los períodos, existe una zona la cual es donde se encuentra la velocidad máxima constantemente. Este comportamiento señala que en los edificios que poseen una altura mediana pueden concentrar la energía sísmica en forma de velocidades, esto tiene relación a los daños presentados en elementos no estructurales o bien, en la capacidad de la disipación de la energía en la estructura. \\
+
+Por último, el espectro de la aceleración identifica valores altos en los periodos cortos, esto demuestra que en las estructuras rígidas y bajas pueden ser las más afectadas por dichas aceleraciones máximas, lo que significa que internamente hay mayores fuerzas sísmicas. Por lo que los edificios pequeños tienden a no sufrir grandes desplazamientos, sin embargo, sí presentan aceleraciones intensas que llegan a comprometer la seguridad de sus componentes. \\
+
+En general, en los espectros presentados se puede identificar como el tipo de estructura tiene una respuesta distinta a un mismo sismo, esto es sumamente importante en la industria dado que se puede facilitar la capacidad en la resistencia de sismos. Pueden ser de ayuda para futuras construcciones y en normas de diseño, o planes de construcción seguro. 
+
 
 \end{document}
